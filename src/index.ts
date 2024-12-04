@@ -1,0 +1,1 @@
+console.log("Projeto configurado com TypeScript!");
