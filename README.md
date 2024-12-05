@@ -53,7 +53,7 @@ Edite o arquivo tsconfig.json para incluir as configurações básicas:
     "esModuleInterop": true,              // Compatibilidade com CommonJS e ES Modules
     "skipLibCheck": true                  // Ignorar verificação de bibliotecas
   },
-  "include": ["src"],                     // Apenas arquivos na pasta src
+  "include": ["./src/**/*.ts"],                     // Apenas arquivos na pasta src
   "exclude": ["node_modules"]            // Ignorar a pasta node_modules
 }
 
