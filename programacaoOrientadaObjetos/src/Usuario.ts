@@ -25,24 +25,24 @@
 
 // console.log(`Olá, meu nome é ${usuario1.nome} e tenho ${usuario1.idade}`)
 
-export class Usuario {
-    nome: string;
-    idade?: number; // Propriedade opcional
-    email?: string; // Propriedade opcional
+// export class Usuario {
+//     nome: string;
+//     idade?: number; // Propriedade opcional
+//     email?: string; // Propriedade opcional
 
-    constructor(nome: string, idade?: number, email?: string) {
-        this.nome = nome;
-        this.idade = idade;
-        this.email = email;
-    }
+//     constructor(nome: string, idade?: number, email?: string) {
+//         this.nome = nome;
+//         this.idade = idade;
+//         this.email = email;
+//     }
 
-    mostrarInfos() {
-        console.log(`Nome: ${this.nome}`);
-        if (this.idade !== undefined) {
-            console.log(`Idade: ${this.idade}`);
-        }
-        if (this.email !== undefined) {
-            console.log(`Email: ${this.email}`);
-        }
-    }
-}
+//     mostrarInfos() {
+//         console.log(`Nome: ${this.nome}`);
+//         if (this.idade !== undefined) {
+//             console.log(`Idade: ${this.idade}`);
+//         }
+//         if (this.email !== undefined) {
+//             console.log(`Email: ${this.email}`);
+//         }
+//     }
+// }

@@ -73,10 +73,33 @@
 // produto3.mostrarPrecoComDesconto()
 
 
-import { Usuario } from "./Usuario";
+// import { Usuario } from "./Usuario";
 
-const usuario1 = new Usuario("Thainá", 28, "thaina@example.com");
-const usuario2 = new Usuario("João", 30);
+// const usuario1 = new Usuario("Thainá", 28, "thaina@example.com");
+// const usuario2 = new Usuario("João", 30);
 
-usuario1.mostrarInfos();
-usuario2.mostrarInfos();
+// usuario1.mostrarInfos();
+// usuario2.mostrarInfos();
+
+import { Pessoa } from "./Pessoa";
+
+const pessoa1 = new Pessoa('Thainá', 28);
+pessoa1.mostrarDetalhes();
+pessoa1.calculoIdade()
+
+import { Carro } from "./Carro"; 
+
+const carro1 = new Carro('Ford', 'Fiesta', 2014, 'Prata');
+carro1.mostrarDetalhes();
+
+const carro2 = new Carro('Fiat', 'Toro', 2019)
+carro2.mostrarDetalhes()
+
+import { ContaBancaria } from "./Conta";
+
+const conta = new ContaBancaria('Thainá', 5000);
+conta.mostrarSaldo();
+conta.sacar(300);
+conta.sacar(1000);
+conta.depositar(200)
+conta.mostrarSaldo()
