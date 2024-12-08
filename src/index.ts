@@ -13,8 +13,23 @@ import "./aula1";
 
 // Exercícios de fixação
 
-console.log("\n Exercícios de fixação \n Ex1:")
+console.log("\n Exercícios de fixação Ex1:")
 import "./exercicio1"
 
-console.log("\n Exercícios de fixação \n Ex2:")
+console.log("\n Exercícios de fixação Ex2:")
 import "./exercicio2"
+
+console.log("\n Exercícios de fixação Ex3:")
+import "./exercicio3"
+
+console.log("\n Exercícios de fixação Ex4:")
+import "./exercicio4"
+
+console.log("\n Exercícios de fixação Ex5:")
+import "./exercicio5"
+
+console.log("\n Exercícios de fixação Ex6:")
+import "./exercicio6"
+
+console.log("\n Exercícios de fixação Ex7:")
+import "./exercicio7"
