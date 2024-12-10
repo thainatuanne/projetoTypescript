@@ -1,6 +1,6 @@
 # Projeto Typescript
 
-- Este repositório contém a resolução dos exercícios de fixação com TypeScript.
+- Este repositório contém a resolução dos exercícios de fixação com TypeScript, aulas e atividades realizadas em aula.
 
 - ## Objetivos
 
