@@ -86,3 +86,64 @@ npm run build
 
 Execute o código compilado:
 npm start
+```
+
+#### Durante o desenvolvimento deste projeto, foi identificado que o uso da flag `--transpile-only` no script de execução (`dev`) permitia que o TypeScript ignorasse a verificação de tipos. Isso causava comportamentos inesperados, como a possibilidade de acessar propriedades privadas de classes, violando os princípios de encapsulamento.
+
+#### O Problema
+
+O comando original para iniciar o projeto era o seguinte:
+
+```json
+"dev": "ts-node-dev --respawn --transpile-only src/index.ts"
+```
+
+Embora essa configuração agilize o desenvolvimento ao ignorar verificações de tipo, ela compromete a segurança e a integridade do código, permitindo ações que deveriam ser bloqueadas, como acessar membros privados de uma classe.
+
+#### A Solução
+
+Para resolver o problema, foi necessário remover a flag `--transpile-only` do script de execução, garantindo que o TypeScript faça a verificação completa antes de executar o código. A configuração atualizada ficou assim:
+
+```json
+"dev": "ts-node-dev --respawn src/index.ts"
+```
+
+Além disso, o arquivo `tsconfig.json` foi configurado para reforçar as verificações de tipo com as seguintes opções:
+
+```json
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2020",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  }
+}
+```
+
+#### Resultado
+
+Com essa alteração, o TypeScript agora verifica todas as regras de tipo e impede acessos indevidos a propriedades privadas ou qualquer outra violação de encapsulamento. Essa configuração melhora a segurança do código e evita problemas em ambiente de produção.
+
+#### Verificando Tipos Manualmente
+
+Adicionalmente, foi adicionado um script para verificação manual de tipos, útil durante o desenvolvimento:
+
+```json
+"type-check": "tsc --noEmit"
+```
+
+Esse comando pode ser executado com:
+
+```bash
+npm run type-check
+```
+
+Ele verifica o código sem transpilar, garantindo que não há erros antes de iniciar o servidor.
+
+---
+
+Com essas melhorias, o projeto agora segue boas práticas de desenvolvimento e garante maior confiabilidade no código.
