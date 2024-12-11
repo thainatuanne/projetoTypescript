@@ -129,5 +129,3 @@ npm run type-check
 Ele verifica o código sem transpilar, garantindo que não há erros antes de iniciar o servidor.
 
 ---
-
-Com essas melhorias, o projeto agora segue boas práticas de desenvolvimento e garante maior confiabilidade no código.
