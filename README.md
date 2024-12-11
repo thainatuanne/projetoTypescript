@@ -108,22 +108,6 @@ Para resolver o problema, foi necessário remover a flag `--transpile-only` do s
 "dev": "ts-node-dev --respawn src/index.ts"
 ```
 
-Além disso, o arquivo `tsconfig.json` foi configurado para reforçar as verificações de tipo com as seguintes opções:
-
-```json
-{
-  "compilerOptions": {
-    "strict": true,
-    "target": "ES2020",
-    "module": "commonjs",
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "esModuleInterop": true,
-    "skipLibCheck": true
-  }
-}
-```
-
 #### Resultado
 
 Com essa alteração, o TypeScript agora verifica todas as regras de tipo e impede acessos indevidos a propriedades privadas ou qualquer outra violação de encapsulamento. Essa configuração melhora a segurança do código e evita problemas em ambiente de produção.
