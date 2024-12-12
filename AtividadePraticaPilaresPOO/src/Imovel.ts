@@ -17,12 +17,8 @@ export abstract class Imovel {
         this._preco = novoPreco;
     }
 
-    imprimirResultado(): void {
-        console.log(`Endereço: ${this._endereco}, Preço: R$ ${this._preco.toFixed(2)}`);
-    }
+    abstract imprimirResultado(): void;
 }
-
-
 export class Novo extends Imovel {
     constructor(endereco: string, preco: number, private _adicional: number) {
         super(endereco, preco);
@@ -36,11 +32,10 @@ export class Novo extends Imovel {
         this._adicional = novoAdicional;
     }
 
-    imprimirResuldado(): void {
+    imprimirResultado(): void {
         const precoFinal = this.preco + this._adicional;
         console.log(
-            `Endereço: ${this.endereco}, Preço normal: R$${this.preco.toFixed(2)}, Preço com adicional: R$${precoFinal.toFixed(2)}`
-        );
+            `Endereço: ${this.endereco}, Preço normal: R$${this.preco.toFixed(2)}, Preço com adicional: R$${precoFinal.toFixed(2)}`);
     }
 }
 
@@ -57,7 +52,7 @@ export class Velho extends Imovel {
         this._desconto = novoDesconto;
     }
 
-    imprimirResuldado(): void {
+    imprimirResultado(): void {
         const precoFinal = this.preco - this._desconto;
         console.log(
             `Endereço: ${this.endereco}, Preço normal: R$${this.preco.toFixed(2)}, Preço com desconto: R$${precoFinal.toFixed(2)}`

@@ -5,12 +5,20 @@ export abstract class Ingresso {
         this.valor = valor;
     }
 
-    imprimeValor(): void {
-        console.log(`Ingresso criado com sucesso! Valor do ingresso: R$${this.valor.toFixed(2)}`);
+    abstract imprimeValor(): void
+}
+
+export class Normal extends Ingresso {
+    constructor(valor: number) {
+        super(valor);
+    }
+
+    imprimeValor() {
+        console.log(`Valor do ingresso normal: R$${this.valor.toFixed(2)}`);
     }
 }
 
-export abstract class IngressoAdicional extends Ingresso {
+export class IngressoAdicional extends Ingresso {
     protected adicional: number;
 
     constructor(valor: number, adicional: number) {
@@ -18,15 +26,9 @@ export abstract class IngressoAdicional extends Ingresso {
         this.adicional = adicional;
     }
 
-    imprimeValor(): void {
+    imprimeValor() {
         const valorTotal = this.valor + this.adicional;
         console.log(`Valor do ingresso adicional: R$${valorTotal.toFixed(2)}`);
-    }
-}
-
-export class Normal extends Ingresso {
-    constructor(valor: number) {
-        super(valor);
     }
 }
 
