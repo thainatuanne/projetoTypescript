@@ -128,4 +128,6 @@ npm run type-check
 
 Ele verifica o código sem transpilar, garantindo que não há erros antes de iniciar o servidor.
 
+Link: https://thin-board-3ae.notion.site/Configura-o-do-TS-no-Node-1522e1808a1b806daa3afaf4a1c9488f
+
 ---
