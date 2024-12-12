@@ -27,3 +27,11 @@ imoveis.forEach((imovel) => imovel.imprimirResultado());
 
 //
 
+import {Animal, Cavalo, Cachorro, Gato} from "./Animal";
+
+const cavalo = new Cavalo("Spirit", "hinn in", "galopando", "campo");
+const cachorro = new Cachorro("Rex", "au au", "brincando", "caramelo");
+const gato = new Gato("Miau", "miau", "comendo", 3);
+
+const animais: Animal[] = [cavalo, cachorro, gato];
+Animal.executarAcoes(animais);
