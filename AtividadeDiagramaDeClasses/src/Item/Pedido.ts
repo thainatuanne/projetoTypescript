@@ -4,24 +4,20 @@ export class Pedido {
     private itens: Item[] = [];
     private valorTotal: number = 0;
 
-    // Getter para acessar os itens
     get listaItens(): Item[] {
         return this.itens;
     }
 
-    // Getter para acessar o valor total
     get valorFinal(): number {
         return this.valorTotal;
     }
 
-    // Adiciona um novo item ao pedido
     adicionarItem(item: Item): void {
         this.itens.push(item);
         this.valorTotal += item.valor;
         console.log(`Item "${item.nome}" adicionado com sucesso!`);
     }
 
-    // Remove um item por índice
     removerItem(index: number): void {
         if (index >= 0 && index < this.itens.length) {
             const itemRemovido = this.itens.splice(index, 1)[0];
@@ -32,7 +28,6 @@ export class Pedido {
         }
     }
 
-    // Altera um item existente por índice
     alterarItem(index: number, novoItem: Item): void {
         if (index >= 0 && index < this.itens.length) {
             const itemAntigo = this.itens[index];
@@ -44,7 +39,6 @@ export class Pedido {
         }
     }
 
-    // Imprime os detalhes do pedido
     imprimirPedido(): void {
         console.log('=== Detalhes do Pedido ===');
         this.itens.forEach((item, index) => {
