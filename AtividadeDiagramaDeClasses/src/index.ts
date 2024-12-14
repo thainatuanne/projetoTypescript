@@ -45,11 +45,11 @@ AnimaisUtils.executarAcoes([cavalo, cachorro, gato]);
 
 //
 
-import { Cliente } from './OficinaRefrigeracao/Cliente'; 
-import { Aparelho } from './OficinaRefrigeracao/Aparelho'; 
-import { Oficina } from './OficinaRefrigeracao/Oficina'; 
-import { ICliente } from './OficinaRefrigeracao/ICliente'; 
-import { IAparelho } from './OficinaRefrigeracao/IAparelho'; 
+import { Cliente } from './OficinaRefrigeracao/Cliente';
+import { Aparelho } from './OficinaRefrigeracao/Aparelho';
+import { Oficina } from './OficinaRefrigeracao/Oficina';
+import { ICliente } from './OficinaRefrigeracao/ICliente';
+import { IAparelho } from './OficinaRefrigeracao/IAparelho';
 
 const cliente1: ICliente = new Cliente(1, 'João Silva', '99999-9999', 'joao@gmail.com');
 const cliente2: ICliente = new Cliente(2, 'Maria Santos', '98888-8888', 'maria@gmail.com');
@@ -84,3 +84,34 @@ cliente1.imprimirDados();
 cliente2.imprimirDados();
 
 oficina.listarOrdens().forEach((ordem) => ordem.imprimirResumo());
+
+//
+
+import { ItemPedido } from './Desconto/ItemPedido';
+import { Pedidos } from './Desconto/Pedidos';
+
+const pedidos = new Pedidos();
+
+const produto1 = new ItemPedido("Produto A", 100, 2);
+const produto2 = new ItemPedido("Produto B", 50, 3);
+
+console.log("=== Itens no pedido antes dos descontos ===");
+pedidos.adicionarItem(produto1);
+pedidos.adicionarItem(produto2);
+pedidos.listarItens();
+
+console.log("== Itens no pedido com desconto de 10% == ");
+pedidos.listarItens();
+pedidos.aplicarDescontoEmPorcentagem(10);
+console.log("Valor total com 10% de desconto:", pedidos.recuperarValorTotal());
+
+console.log("== Itens no pedido com desconto fixo de R$50: ==");
+pedidos.listarItens();
+pedidos.aplicarDescontoEmReais(50);
+console.log("Valor total com desconto de R$50:", pedidos.recuperarValorTotal());
+
+pedidos.removerItem("Produto A");
+console.log("Valor total após remover Produto A:", pedidos.recuperarValorTotal());
+
+console.log("Itens no pedido após remover Produto A:");
+pedidos.listarItens();
