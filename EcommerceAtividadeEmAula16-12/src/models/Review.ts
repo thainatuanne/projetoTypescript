@@ -36,7 +36,7 @@ export class Review {
     }
 
     reviewDetails() {
-        console.log(`ID: ${this._id} | Usuário: ${this._from} | Nota: ${this._nota}`)
+        console.log(`ID: ${this._id} | Usuário: ${this._from.username} | Nota: ${this._nota}`)
     }
 
     toJson(){

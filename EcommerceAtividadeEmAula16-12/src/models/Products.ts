@@ -36,7 +36,7 @@ export class Product {
     show() {
         console.log(`Porduto: ${this._name} de valor R$ ${this._value} do tipo ${this._type}`)
         this.showComments()
-        // this.showReviews()
+        this.showReviews()
     }
 
     showComments() {
@@ -71,7 +71,7 @@ export class Product {
         }
 
         productReviews.forEach(review => {
-            console.log(`${review.from.username}: ${review.nota} estrelas`)
+            review.reviewDetails();
         })
     }
 
