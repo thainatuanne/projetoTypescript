@@ -15,3 +15,9 @@ user1.removeFromCart(produto1)
 produto1.addComment('Compra boa', user1)
 produto1.showComments()
 produto1.show()
+
+// REVIEWS 
+
+produto1.addReview(1, user1)
+produto1.showReviews()
+produto1.calcularReviews()
