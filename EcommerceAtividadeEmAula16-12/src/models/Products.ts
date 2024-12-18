@@ -75,7 +75,7 @@ export class Product {
         })
     }
 
-    calcularReviews() {
+    calculateReviews() {
         const productReviews = reviews.filter(review => review.product.id === this._id)
 
 

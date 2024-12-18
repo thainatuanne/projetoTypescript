@@ -20,4 +20,4 @@ produto1.show()
 
 produto1.addReview(1, user1)
 produto1.showReviews()
-produto1.calcularReviews()
+produto1.calculateReviews()
