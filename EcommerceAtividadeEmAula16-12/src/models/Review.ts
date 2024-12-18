@@ -4,7 +4,7 @@ import { Product } from "./Products";
 
 
 export class Review {
-    private _id: string
+    private readonly _id: string //= this._id = randomUUID(); // readonly pra não deixar mexer
 
     constructor(
         private _nota: number,
@@ -12,7 +12,7 @@ export class Review {
         private _product: Product
     )
     {
-        this._id = randomUUID();
+        this._id = randomUUID()
     }
 
     get nota(): number {
@@ -31,12 +31,12 @@ export class Review {
         if (this._nota < 0 || this._nota > 5) {
             console.log(`Atenção! A nota deve estar entre 5 e 0.`)
         } else {
-            this._id = randomUUID()
+            console.log(`A nota foi adicionada com sucesso.`)
         }
     }
 
     reviewDetails() {
-        console.log(`ID: ${this._id} | Usuário: ${this._from.username} | Nota: ${this._nota}`)
+        console.log(`ID: ${this._id}\nUsuário: ${this._from.username}\nNota: ${this._nota}`)
     }
 
     toJson(){

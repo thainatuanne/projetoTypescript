@@ -7,7 +7,7 @@ import { Review } from "./Review"
 import { reviews } from "../database/review"
 
 export class Product {
-    private _id: string
+    private readonly _id: string
 
     constructor(
         private _name: string,
@@ -34,20 +34,24 @@ export class Product {
     }
 
     show() {
-        console.log(`Porduto: ${this._name} de valor R$ ${this._value} do tipo ${this._type}`)
+        console.log(`Produto: ${this._name} de valor R$ ${this._value} do tipo ${this._type}`)
         this.showComments()
         this.showReviews()
     }
 
     showComments() {
+        // Filtra comentários pelo ID do produto atual
+        const productComments = comments.filter(comment => comment.product.id === this._id)
+
         if (comments.length === 0) {
             console.log("Nenhum comentário disponível.")
             return;
         }
 
-        comments.forEach(comment => {
+        console.log(`Comentários para o produto ${this._name}:`)
+        productComments.forEach(comment => {
             console.log(`${comment.from.username}: ${comment.content}`)
-        })
+        });
     }
 
     addComment(content: string, user: User) {
@@ -63,6 +67,7 @@ export class Product {
     }
 
     showReviews() {
+        // Filtra avaliações pelo ID do produto atual
         const productReviews = reviews.filter(review => review.product.id === this._id)
 
         if (productReviews.length === 0) {
@@ -70,14 +75,15 @@ export class Product {
             return
         }
 
+        console.log(`Avaliações para o produto ${this._name}:`)
         productReviews.forEach(review => {
             review.reviewDetails();
-        })
+        });
     }
 
     calculateReviews() {
+        // Filtra avaliações pelo ID do produto atual
         const productReviews = reviews.filter(review => review.product.id === this._id)
-
 
         if (productReviews.length === 0) {
             console.log(`Nenhuma avaliação disponível.`)

@@ -3,7 +3,7 @@ import { User } from "./User"
 import { Product } from "./Products"
 
 export class Comment{
-    private _id: string
+    private readonly _id: string
 
     constructor(
         private _content: string,

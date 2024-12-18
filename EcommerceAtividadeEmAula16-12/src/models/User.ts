@@ -1,17 +1,18 @@
 import { randomUUID } from "crypto"
 import { Product } from "./Products"
-import { users } from "../database/product"
+import { users } from "../database/user"
 
 export class User {
-    private id: string
+    private readonly id: string
     private _cart: Product[] =[] 
 
     constructor(
         private _name: string,
         private _username: string,
-        private _email: string
+        private readonly _email: string
     ) {
         this.id = randomUUID();
+        users.push(this) // Adiciona automaticamente à lista global de usuários
     }
 
     get name(): string {
